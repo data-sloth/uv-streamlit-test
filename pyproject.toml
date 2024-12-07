@@ -8,3 +8,19 @@ dependencies = [
     "ruff>=0.8.1",
     "streamlit>=1.40.2",
 ]
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ['src']
+include = ['lib*']
+
+[dependency-groups]
+dev = [
+    "test2",
+]
+
+[tool.uv.sources]
+test2 = { workspace = true }

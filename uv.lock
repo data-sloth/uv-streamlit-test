@@ -617,10 +617,15 @@ wheels = [
 [[package]]
 name = "test2"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "ruff" },
     { name = "streamlit" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "test2" },
 ]
 
 [package.metadata]
@@ -628,6 +633,9 @@ requires-dist = [
     { name = "ruff", specifier = ">=0.8.1" },
     { name = "streamlit", specifier = ">=1.40.2" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "test2", editable = "." }]
 
 [[package]]
 name = "toml"
